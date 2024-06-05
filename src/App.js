@@ -5,7 +5,7 @@ const App = () => {
   const [notificationMessage, setNotificationMessage] = useState('');
 
   const triggerNotification = () => {
-    setNotificationMessage('this is a sample notifiation message');
+    setNotificationMessage('This is a sample notification message');
   };
 
   const handleClose = () => {
@@ -13,13 +13,18 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh'
+    }}>
       <button onClick={triggerNotification}>Trigger Notification</button>
       {notificationMessage && (
         <NotificationPanel
           message={notificationMessage}
           onClose={handleClose}
-          animationDuration={5000}
+          animationDuration={3000}
         />
       )}
     </div>
